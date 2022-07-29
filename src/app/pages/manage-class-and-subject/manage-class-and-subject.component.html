@@ -1,0 +1,36 @@
+<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+        class="rounded border-bottom border-primary " aria-label="breadcrumb">
+        <ol class="breadcrumb px-3 py-2 rounded mb-0">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item active">Breadcrumbs</li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="page-header-content px-5">
+            <div class="row align-items-center  mt-4">
+                <div class="col-12 col-sm-4 col-md-4 p-0">
+                    <h1 class="page-header-title col-6 p-0">
+                        Manage Academics
+                    </h1>
+                </div>
+                <div class="col-9 col-sm-6 mt-2 mt-sm-0">
+                    <input type="text" placeholder="Search Campuse, Class, Section Or subject"
+                        class="form-control bordered border-white bg-transparent text-white dash-input mars-0016">
+                </div>
+                <div class="col-3 mt-2 mt-sm-0 col-sm-2 col-md-2 d-flex justify-content-end">
+                    <button class="btn btn-white">Add<i class="fa-solid fa-caret-down ms-1"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid px-4 mt-n10">
+    <div class="row">
+        <div class="col-lg-6 col-xl-3 mb-4" *ngFor="let card of cards">
+            <app-manage-class-subjects-card [title]="card.title" [color]="card.color" [data]="card.data">
+            </app-manage-class-subjects-card>
+        </div>
+    </div>
+</div>

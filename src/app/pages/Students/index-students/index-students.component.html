@@ -1,0 +1,21 @@
+<app-header title="Students"></app-header>
+<div class="container-fluid px-4 mt-n10">
+    <div class="row justify-content-center">
+        <div class="col-7 col-sm-6 text-center">
+            <a [routerLink]="'manage'" class="btn btn-link text-warning w-100 bg-white rounded mars-0017 "
+                id="manage">View All
+                Students</a>
+
+        </div>
+        <div class="mt-1 col-7 mt-sm-0 col-sm-6 text-center">
+            <a [routerLink]="'add'" class="btn btn-link text-warning w-100 bg-white rounded mars-0017" id="add">Add
+                Students</a>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container-fluid mt-5 bg-white rounded">
+    <router-outlet (activate)="changeOfRoutes()"></router-outlet>
+</div>

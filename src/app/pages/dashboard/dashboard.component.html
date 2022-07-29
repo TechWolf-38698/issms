@@ -1,0 +1,171 @@
+<app-header title="Dashboard" icon="wave-square"></app-header>
+<div class="container-fluid px-4 mt-n10">
+
+  <!-- Example Colored Cards for Dashboard Demo-->
+  <div class="row">
+    <div class="col-lg-6 col-xl-3 mb-4">
+      <div class="bg-light text-white h-100 border-bottom border-lg rounded border-danger">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="me-3">
+              <div class="text-dark small">Students</div>
+              <div class="text-xl text-dark fw-bold">{{miniCardData[0].stdCount}}</div>
+            </div>
+            <i class="fa-solid fa-users-line text-danger fa-3x"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-6 col-xl-3 mb-4">
+      <div class="bg-light text-dark h-100 border-bottom border-lg rounded border-warning">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="me-3">
+              <div class="text-dark small">Teacher & Admin Staff</div>
+              <div class="text-xl text-dark fw-bold">{{miniCardData[0].staffCount}}</div>
+            </div>
+            <i class="fa-solid fa-user text-warning fa-3x"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-6 col-xl-3 mb-4">
+      <div class="bg-light text-dark h-100 border-bottom border-lg rounded border-success">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="me-3">
+              <div class="text-dark small">Events</div>
+              <div class="text-xl text-dark fw-bold">{{miniCardData[0].eventCount}}</div>
+            </div>
+            <i class="fa-solid fa-calendar-days text-success fa-3x"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-6 col-xl-3 mb-4">
+      <div class="bg-light  text-white h-100 border-bottom border-lg rounded border-primary">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="me-3">
+              <div class="text-dark small">Pending Requests</div>
+              <div class="text-dark fw-bold text-xl">{{miniCardData[0].penddingReqCount}}</div>
+            </div>
+            <i class="fa-solid fa-plus text-is fa-3x"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Example Charts for Dashboard Demo-->
+  <div class="row pt-5">
+    <div class="col-md-6">
+      <h2><i class="fa-solid fa-paste text-is me-1"></i>Online Notice Board</h2>
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">School</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Admin</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Teachers</button>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <ul class="list-group list-style-none list">
+                <li class="py-3 my-1 border-bottom" *ngFor="let li of noticeBoard[0].school">
+                  <div class="main">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="text-dark">{{li.title}}</h4>
+                      <div class="btn btn-sm btn-outline-warning">{{li.date}}</div>
+                    </div>
+                    <p class="pt-1 text-dark">{{li.content}}</p>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <ul class="list-group list-style-none list">
+                <li class="py-3 my-1 border-bottom" *ngFor="let li of noticeBoard[0].admin">
+                  <div class="main">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="text-dark">{{li.title}}</h4>
+                      <div class="btn btn-sm btn-outline-warning">{{li.date}}</div>
+                    </div>
+                    <p class="pt-1 text-dark">{{li.content}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <ul class="list-group list-style-none list">
+                <li class="py-3 my-1 border-bottom" *ngFor="let li of noticeBoard[0].teacher">
+                  <div class="main">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="text-dark">{{li.title}}</h4>
+                      <div class="btn btn-sm btn-outline-warning">{{li.date}}</div>
+                    </div>
+                    <p class="pt-1 text-dark">{{li.content}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2><i class="fa-solid fa-calendar-days text-is me-1"></i>Events & Class schedule</h2>
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-event-tab" data-bs-toggle="pill" data-bs-target="#pills-event"
+                type="button" role="tab" aria-controls="pills-event" aria-selected="true">Events</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-class-tab" data-bs-toggle="pill" data-bs-target="#pills-class"
+                type="button" role="tab" aria-controls="pills-class" aria-selected="false">Class
+                Schedule</button>
+            </li>
+
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-event" role="tabpanel" aria-labelledby="pills-class-tab">
+              <div id="calendar"></div>
+
+            </div>
+            <div class="tab-pane fade" id="pills-class" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <ul class="list-group list text-dark" *ngFor="let li of classSchedule">
+                <li class="py-3 my-1 border-bottom">
+                  <div class="main">
+                    <div class="d-flex justify-content-between">
+                      <h4 class="text-dark">{{li.title}}</h4>
+                      <div class="btn btn-sm btn-outline-warning">{{li.date}}</div>
+                    </div>
+                    <p class="pt-1">{{li.content}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
