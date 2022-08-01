@@ -1,0 +1,34 @@
+<app-header title="Teacher"></app-header>
+<div class="container-fluid px-4 mt-n10">
+    <div class="row justify-content-center">
+        <div class="col-7 col-sm-6 text-center">
+            <a href="./manage-staff.html"
+                class="btn btn-link text-warning w-100 bg-white rounded mars-active-001">Teachers</a>
+
+        </div>
+        <div class="mt-1 col-7 mt-sm-0 col-sm-6 text-center">
+            <a routerLink="/admin-staff/manage" class="btn btn-link text-warning w-100 bg-white rounded">Admin
+                Staff</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="mb-2 col-md-4 mb-xl-0 col-xl-2">
+            <div class="col-12 py-3 bg-white rounded">
+                <ul class="list">
+                    <a routerLink="manage">
+                        <li class="mars-0004" id="manage"><i class="fa-solid fa-list"></i> View all
+                            Teachers</li>
+                    </a>
+                    <a routerLink="add">
+                        <li class=" mars-0004" id="add"><i class="fa-solid fa-plus-circle"></i> Add Teacher</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-10 bg-white rounded">
+            <router-outlet (activate)="changeOfRoutes()"></router-outlet>
+        </div>
+    </div>
+</div>

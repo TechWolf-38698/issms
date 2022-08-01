@@ -1,0 +1,415 @@
+<form [formGroup]="form" (ngSubmit)="this.onSubmit()">
+    <div class="row pt-5 pb-5">
+        {{form.value | json}}
+        <div class="col-md-12 col-lg-2">
+            <div class="row justify-content-center align-items-center">
+                <p class="d-flex justify-content-between align-items-center ">Profile Picture <i
+                        class="fas fa-pencil me-4"></i></p>
+
+            </div>
+            <div class="row justify-content-center">
+                <img src="../assets/img/demo/profile-picture-icon.png" class="w-25 mars-0002" alt="">
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-10">
+            <div class="row mt-3 justify-content-center">
+                <div class="col-12">
+                    <p><i class="fas fa-tag"></i> Enrolment</p>
+                </div>
+                <div class="col-11 col-md-4">
+                    <div class="col-12 d-flex">
+                        <p class="col-3">Academic Session</p>
+                        <div class="col">
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Select Academic Session</option>
+                                <option value="academicSection1">lorem ipsum dummy text</option>
+                                <option value="academicSection2">lorem ipsum dummy text</option>
+                                <option value="academicSection3">lorem ipsum dummy text</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="text-yellow ms-5 btn"><i class="fas fa-plus me-1"></i> Add Enrolment</button>
+                </div>
+                <div class="col-11 col-md-4">
+                    <div class="col-12 d-flex">
+                        <p class="col-3">Class</p>
+                        <div class="col">
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Select Class</option>
+                                <option value="class1">lorem ipsum dummy text</option>
+                                <option value="class2">lorem ipsum dummy text</option>
+                                <option value="class3">lorem ipsum dummy text</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-4">
+                    <div class="col-12 d-flex">
+                        <p class="col-3">Section</p>
+                        <div class="col">
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Select Section</option>
+                                <option value="section1">lorem ipsum dummy text</option>
+                                <option value="section2">lorem ipsum dummy text</option>
+                                <option value="section3">lorem ipsum dummy text</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-12 d-flex align-items-center">
+                    <p><i class="fas fa-user"></i> Academic Details</p>
+                </div>
+                <div class="col-11 col-md-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Admission No.</p>
+                        <div class="col">
+                            <input [formControlName]="'admissionNo'" type="text" class="form-control"
+                                placeholder="Admission No" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">First Name</p>
+                        <div class="col">
+                            <input [formControlName]="'firstName'" type="text" class="form-control"
+                                placeholder="First Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Last Name</p>
+                        <div class="col">
+                            <input [formControlName]="'lastName'" type="text" class="form-control"
+                                placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-12 d-flex align-items-center mb-0">
+                    <p><i class="fas fa-calendar"></i> Personal Information</p>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Student Email</p>
+                        <div class="col">
+                            <input [formControlName]="'email'" type="email" class="form-control"
+                                placeholder="Student Email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Date of Birth</p>
+                        <div class="col">
+                            <input [formControlName]="'dob'" type="date" class="form-control"
+                                placeholder="Date of Birth" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4" >
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Student House</p>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="stdHouseA">
+                                <label class="form-check-label" for="stdHouseA">
+                                    Cardinal
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="stdHouseB">
+                                <label class="form-check-label" for="stdHouseB">
+                                    Paramount
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="stdHouseC">
+                                <label class="form-check-label" for="stdHouseC">
+                                    Eminent
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Student Contact</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Student Contact">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Gander</p>
+                        <div class="col">
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Gander</option>
+                                <option value="">lorem ipsum dummy text</option>
+                                <option value="">lorem ipsum dummy text</option>
+                                <option value="">lorem ipsum dummy text</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Blood Group</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Blood Group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-12 d-flex align-items-center mb-0">
+                    <p><i class="fas fa-calendar"></i> Additional Details</p>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Address</p>
+                        <div class="col">
+                            <textarea class="form-control" placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Zip Code</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Zip Code">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Country</p>
+                        <div class="col">
+                            <select name="" id="" class="form-control form-select">
+                                <option value="">Select Country</option>
+                                <option value="">lorem ipsum dummy text</option>
+                                <option value="">lorem ipsum dummy text</option>
+                                <option value="">lorem ipsum dummy text</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father Name</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father's Surname</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father's Surname">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father's Email</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father's Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father's Number</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father's Number">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father's CNIC</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father's CNIC">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father's Profession</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father's Profession">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Father's Company</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Father's CNIC">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Mother Name</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Mother Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Mother's Surname</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Mother's Surname">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Mother's Email</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Mother's Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Mother's Number</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Mother's Number">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Mother's CNIC</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Mother's CNIC">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Mother's Profession</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Mother's Profession">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Parents Email</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Parents Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Emergency Contact Name</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Emergency Contact Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Emergency Contact No</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Emergency Contact No">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Emergency Contact Relation</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Emergency Contact Relation">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">1. Sibling's Name</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="1. Sibling's Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">1. Sibling's Class/Campus</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="1. Sibling's Class/Campus">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">2. Sibling's Name</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="2. Sibling's Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">2. Sibling's Class/Campus</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="2. Sibling's Class/Campus">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">3. Sibling's Name</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="3. Sibling's Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">3. Sibling's Class/Campus</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="3. Sibling's Class/Campus">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-12 d-flex align-items-center mb-0">
+                    <p><i class="fas fa-star"></i> Skills & Social Details</p>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Facebook Link</p>
+                        <div class="col">
+                            <input type="email" class="form-control" placeholder="Facebook Link">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-11 col-md-6 mt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <p class="col-3">Linkedin Profile Link</p>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Linkedin Profile Link">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="!loading" type="submit" class="btn btn-primary mt-5">Add</button>
+            <button *ngIf="loading" class="btn btn-primary mt-5" type="button" disabled>
+                <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
+        </div>
+    </div>
+</form>

@@ -19,13 +19,53 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+             
+              "src/assets/img/favicon.png",
+              "src/assets",
+              "src/fonts/fontawesome/webfonts/fa-brands-400.eot",
+              "src/fonts/fontawesome/webfonts/fa-brands-400.svg",
+              "src/fonts/fontawesome/webfonts/fa-brands-400.ttf",
+              "src/fonts/fontawesome/webfonts/fa-brands-400.woff",
+              "src/fonts/fontawesome/webfonts/fa-brands-400.woff2",
+              "src/fonts/fontawesome/webfonts/fa-regular-400.eot",
+              "src/fonts/fontawesome/webfonts/fa-regular-400.svg",
+              "src/fonts/fontawesome/webfonts/fa-regular-400.ttf",
+              "src/fonts/fontawesome/webfonts/fa-regular-400.woff",
+              "src/fonts/fontawesome/webfonts/fa-regular-400.woff2",
+              "src/fonts/fontawesome/webfonts/fa-solid-900.eot",
+              "src/fonts/fontawesome/webfonts/fa-solid-900.svg",
+              "src/fonts/fontawesome/webfonts/fa-solid-900.ttf",
+              "src/fonts/fontawesome/webfonts/fa-solid-900.woff",
+              "src/fonts/fontawesome/webfonts/fa-solid-900.woff2",
+
+              "src/fonts/fontawesome/metropolis/Metropolis-Black.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-BlackItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-Bold.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-BoldItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-ExtraBold.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-ExtraBoldItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-ExtraLight.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-ExtraLightItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-Light.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-LightItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-Medium.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-MediumItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-Regular.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-RegularItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-SemiBold.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-SemiBoldItalic.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-Thin.otf",
+              "src/fonts/fontawesome/metropolis/Metropolis-ThinItalic.otf"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "styles": ["src/styles.css"],
+            "scripts": [
+              "src/assets/JS/main.js",
+              "src/assets/JS/choices.min.js",
+              "src/assets/JS/litepicker.js",
+              "src/assets/JS/markdown.js",
+              "src/assets/JS/scripts.js",
+              "src/assets/JS/toasts.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -85,13 +125,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }

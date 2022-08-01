@@ -1,0 +1,24 @@
+<div class="card rounded-0 card-{{color}}">
+    <div class="card-header">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="m-0 p-0 pt-2" [ngClass]="{'text-dark': color === '', 'text-white': color !== ''}">{{title}}</h2>
+            <div class="actions d-inline">
+                <button class="btn btn-link p-0 me-1"
+                    [ngClass]="{'text-dark': color === '', 'text-white': color !== ''}"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn btn-link p-0 me-1"
+                    [ngClass]="{'text-dark': color === '', 'text-white': color !== ''}"><i
+                        class="fa-solid fa-plus"></i></button>
+                <button class="btn btn-link p-0" [ngClass]="{'text-dark': color === '', 'text-white': color !== ''}"><i
+                        class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" [ngClass]="{'text-dark': color === '', 'text-white': color !== ''}">
+
+        <h4 [ngClass]="{'text-dark': color === '', 'text-white': color !== ''}">{{data.title}}</h4>
+        <ul class="card-list sortable">
+            <li [ngStyle]="{'border-color': color === '' ? '#000' : '#fff' }" *ngFor="let li of data.ul">{{li}}</li>
+        </ul>
+    </div>
+</div>
