@@ -20,11 +20,10 @@
                     <div class="col-12 d-flex">
                         <p class="col-3">Academic Session</p>
                         <div class="col">
-                            <select name="" id="" class="form-control form-select">
+                            <select formControlName="academicSession" class="form-control form-select" required>
                                 <option value="">Select Academic Session</option>
-                                <option value="academicSection1">lorem ipsum dummy text</option>
-                                <option value="academicSection2">lorem ipsum dummy text</option>
-                                <option value="academicSection3">lorem ipsum dummy text</option>
+                                <option *ngFor="let section of academicsSessions" [value]="section.id">{{section.name}}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -34,11 +33,9 @@
                     <div class="col-12 d-flex">
                         <p class="col-3">Class</p>
                         <div class="col">
-                            <select name="" id="" class="form-control form-select">
+                            <select formControlName="class" class="form-control form-select" required>
                                 <option value="">Select Class</option>
-                                <option value="class1">lorem ipsum dummy text</option>
-                                <option value="class2">lorem ipsum dummy text</option>
-                                <option value="class3">lorem ipsum dummy text</option>
+                                <option *ngFor="let class of classes" [value]="class.id">{{class.name}}</option>
                             </select>
                         </div>
                     </div>
@@ -47,11 +44,10 @@
                     <div class="col-12 d-flex">
                         <p class="col-3">Section</p>
                         <div class="col">
-                            <select name="" id="" class="form-control form-select">
+                            <select formControlName="section" class="form-control form-select" required>
                                 <option value="">Select Section</option>
-                                <option value="section1">lorem ipsum dummy text</option>
-                                <option value="section2">lorem ipsum dummy text</option>
-                                <option value="section3">lorem ipsum dummy text</option>
+                                <option *ngFor="let section of sections" [value]="section.id">{{section.name}}</option>
+
                             </select>
                         </div>
                     </div>
@@ -65,7 +61,7 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Admission No.</p>
                         <div class="col">
-                            <input [formControlName]="'admissionNo'" type="text" class="form-control"
+                            <input formControlName="admissionNo" type="text" class="form-control"
                                 placeholder="Admission No" required>
                         </div>
                     </div>
@@ -74,8 +70,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">First Name</p>
                         <div class="col">
-                            <input [formControlName]="'firstName'" type="text" class="form-control"
-                                placeholder="First Name" required>
+                            <input formControlName="firstName" type="text" class="form-control" placeholder="First Name"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -83,8 +79,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Last Name</p>
                         <div class="col">
-                            <input [formControlName]="'lastName'" type="text" class="form-control"
-                                placeholder="Last Name" required>
+                            <input formControlName="lastName" type="text" class="form-control" placeholder="Last Name"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -97,8 +93,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Student Email</p>
                         <div class="col">
-                            <input [formControlName]="'email'" type="email" class="form-control"
-                                placeholder="Student Email" required>
+                            <input formControlName="email" type="email" class="form-control" placeholder="Student Email"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -106,29 +102,32 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Date of Birth</p>
                         <div class="col">
-                            <input [formControlName]="'dob'" type="date" class="form-control"
-                                placeholder="Date of Birth" required>
+                            <input formControlName="dob" type="date" class="form-control" placeholder="Date of Birth"
+                                required>
                         </div>
                     </div>
                 </div>
-                <div class="col-11 col-md-6 mt-4" >
+                <div class="col-11 col-md-6 mt-4" formGroupName="studentHouse">
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Student House</p>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="stdHouseA">
+                                <input formControlName="cardinal" class="form-check-input" type="checkbox" value=""
+                                    id="stdHouseA">
                                 <label class="form-check-label" for="stdHouseA">
                                     Cardinal
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="stdHouseB">
+                                <input formControlName="paramount" class="form-check-input" type="checkbox" value=""
+                                    id="stdHouseB">
                                 <label class="form-check-label" for="stdHouseB">
                                     Paramount
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="stdHouseC">
+                                <input formControlName="eminent" class="form-check-input" type="checkbox" value=""
+                                    id="stdHouseC">
                                 <label class="form-check-label" for="stdHouseC">
                                     Eminent
                                 </label>
@@ -140,7 +139,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Student Contact</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Student Contact">
+                            <input formControlName="studentContactNo" type="text" class="form-control"
+                                placeholder="Student Contact" required>
                         </div>
                     </div>
                 </div>
@@ -148,11 +148,11 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Gander</p>
                         <div class="col">
-                            <select name="" id="" class="form-control form-select">
-                                <option value="">Gander</option>
-                                <option value="">lorem ipsum dummy text</option>
-                                <option value="">lorem ipsum dummy text</option>
-                                <option value="">lorem ipsum dummy text</option>
+                            <select formControlName="gender" class="form-control form-select" required>
+                                <option value="">Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
                     </div>
@@ -161,7 +161,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Blood Group</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Blood Group">
+                            <input formControlName="bloodGroup" type="text" class="form-control"
+                                placeholder="Blood Group" required>
                         </div>
                     </div>
                 </div>
@@ -174,7 +175,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Address</p>
                         <div class="col">
-                            <textarea class="form-control" placeholder="Address"></textarea>
+                            <textarea formControlName="address" class="form-control" placeholder="Address"
+                                required></textarea>
                         </div>
                     </div>
                 </div>
@@ -182,7 +184,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Zip Code</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Zip Code">
+                            <input formControlName="zipCode" type="text" class="form-control" placeholder="Zip Code"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -190,11 +193,9 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Country</p>
                         <div class="col">
-                            <select name="" id="" class="form-control form-select">
+                            <select formControlName="country" class="form-control form-select" required>
                                 <option value="">Select Country</option>
-                                <option value="">lorem ipsum dummy text</option>
-                                <option value="">lorem ipsum dummy text</option>
-                                <option value="">lorem ipsum dummy text</option>
+                                <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
                             </select>
                         </div>
                     </div>
@@ -203,7 +204,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father Name</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father Name">
+                            <input formControlName="fatherName" type="text" class="form-control"
+                                placeholder="Father Name" required>
                         </div>
                     </div>
                 </div>
@@ -211,7 +213,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father's Surname</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father's Surname">
+                            <input formControlName="fatherSurname" type="text" class="form-control"
+                                placeholder="Father's Surname" required>
                         </div>
                     </div>
                 </div>
@@ -219,7 +222,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father's Email</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father's Email">
+                            <input formControlName="fatherEmail" type="email" class="form-control"
+                                placeholder="Father's Email" >
                         </div>
                     </div>
                 </div>
@@ -227,7 +231,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father's Number</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father's Number">
+                            <input formControlName="fatherNo" type="text" class="form-control"
+                                placeholder="Father's Number" required>
                         </div>
                     </div>
                 </div>
@@ -235,7 +240,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father's CNIC</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father's CNIC">
+                            <input formControlName="fatherCNIC" type="text" class="form-control"
+                                placeholder="Father's CNIC" required>
                         </div>
                     </div>
                 </div>
@@ -243,7 +249,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father's Profession</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father's Profession">
+                            <input formControlName="fatherProfession" type="text" class="form-control"
+                                placeholder="Father's Profession" required>
                         </div>
                     </div>
                 </div>
@@ -251,7 +258,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Father's Company</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Father's CNIC">
+                            <input formControlName="fatherCompany" type="text" class="form-control"
+                                placeholder="Father's CNIC" required>
                         </div>
                     </div>
                 </div>
@@ -259,7 +267,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Mother Name</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Mother Name">
+                            <input formControlName="motherName" type="text" class="form-control"
+                                placeholder="Mother Name" required>
                         </div>
                     </div>
                 </div>
@@ -267,7 +276,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Mother's Surname</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Mother's Surname">
+                            <input formControlName="motherSurname" type="text" class="form-control"
+                                placeholder="Mother's Surname" required>
                         </div>
                     </div>
                 </div>
@@ -275,7 +285,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Mother's Email</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Mother's Email">
+                            <input formControlName="motherEmail" type="email" class="form-control"
+                                placeholder="Mother's Email" required>
                         </div>
                     </div>
                 </div>
@@ -283,7 +294,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Mother's Number</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Mother's Number">
+                            <input formControlName="motherNo" type="text" class="form-control"
+                                placeholder="Mother's Number" required>
                         </div>
                     </div>
                 </div>
@@ -291,7 +303,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Mother's CNIC</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Mother's CNIC">
+                            <input formControlName="motherCNIC" type="text" class="form-control"
+                                placeholder="Mother's CNIC" required>
                         </div>
                     </div>
                 </div>
@@ -299,7 +312,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Mother's Profession</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Mother's Profession">
+                            <input formControlName="motherProfession" type="text" class="form-control"
+                                placeholder="Mother's Profession" required>
                         </div>
                     </div>
                 </div>
@@ -307,7 +321,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Parents Email</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Parents Email">
+                            <input formControlName="parentsEmail" type="email" class="form-control"
+                                placeholder="Parents Email" required>
                         </div>
                     </div>
                 </div>
@@ -315,7 +330,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Emergency Contact Name</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Emergency Contact Name">
+                            <input formControlName="emergencyContactName" type="text" class="form-control"
+                                placeholder="Emergency Contact Name" required>
                         </div>
                     </div>
                 </div>
@@ -323,7 +339,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Emergency Contact No</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Emergency Contact No">
+                            <input formControlName="emergencyContactNo" type="text" class="form-control"
+                                placeholder="Emergency Contact No" required>
                         </div>
                     </div>
                 </div>
@@ -331,7 +348,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Emergency Contact Relation</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Emergency Contact Relation">
+                            <input formControlName="emergencyContactRelation" type="text" class="form-control"
+                                placeholder="Emergency Contact Relation" required>
                         </div>
                     </div>
                 </div>
@@ -339,7 +357,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">1. Sibling's Name</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="1. Sibling's Name">
+                            <input formControlName="sibling1Name" type="text" class="form-control"
+                                placeholder="1. Sibling's Name" required>
                         </div>
                     </div>
                 </div>
@@ -347,7 +366,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">1. Sibling's Class/Campus</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="1. Sibling's Class/Campus">
+                            <input formControlName="sibling1Class" type="text" class="form-control"
+                                placeholder="1. Sibling's Class/Campus" required>
                         </div>
                     </div>
                 </div>
@@ -355,7 +375,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">2. Sibling's Name</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="2. Sibling's Name">
+                            <input formControlName="sibling2Name" type="text" class="form-control"
+                                placeholder="2. Sibling's Name" required>
                         </div>
                     </div>
                 </div>
@@ -363,7 +384,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">2. Sibling's Class/Campus</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="2. Sibling's Class/Campus">
+                            <input formControlName="sibling2Class" type="text" class="form-control"
+                                placeholder="2. Sibling's Class/Campus" required>
                         </div>
                     </div>
                 </div>
@@ -371,7 +393,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">3. Sibling's Name</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="3. Sibling's Name">
+                            <input formControlName="sibling3Name" type="text" class="form-control"
+                                placeholder="3. Sibling's Name" required>
                         </div>
                     </div>
                 </div>
@@ -379,7 +402,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">3. Sibling's Class/Campus</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="3. Sibling's Class/Campus">
+                            <input formControlName="sibling3Class" type="text" class="form-control"
+                                placeholder="3. Sibling's Class/Campus" required>
                         </div>
                     </div>
                 </div>
@@ -392,7 +416,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Facebook Link</p>
                         <div class="col">
-                            <input type="email" class="form-control" placeholder="Facebook Link">
+                            <input formControlName="fbLink" type="text" class="form-control" placeholder="Facebook Link"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -400,7 +425,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Linkedin Profile Link</p>
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Linkedin Profile Link">
+                            <input formControlName="linkedinProfile" type="text" class="form-control"
+                                placeholder="Linkedin Profile Link" required>
                         </div>
                     </div>
                 </div>
