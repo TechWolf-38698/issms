@@ -61,9 +61,7 @@ export class AddStudentsComponent implements OnInit {
     linkedinProfile: [''],
   });
 
-  ngOnInit(): void {
-    console.log(this.form.get('motherEmail'));
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     this.loading = true;
@@ -272,5 +270,24 @@ export class AddStudentsComponent implements OnInit {
   }
   get linkedinProfile() {
     return this.form.get('linkedinProfile');
+  }
+
+  setFatherCNIC(e: any) {
+    if (e.length == 13) {
+      this.form
+        .get('fatherCNIC')
+        ?.setValue(
+          e.replace(/\D/g, '').replace(/(\d{5})(\d{7})(\d{1})/, '$1-$2-$3')
+        );
+    }
+  }
+  setMotherCNIC(e: any) {
+    if (e.length == 13) {
+      this.form
+        .get('motherCNIC')
+        ?.setValue(
+          e.replace(/\D/g, '').replace(/(\d{5})(\d{7})(\d{1})/, '$1-$2-$3')
+        );
+    }
   }
 }

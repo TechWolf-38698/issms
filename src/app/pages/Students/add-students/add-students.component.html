@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex">
-                        <p class="col-3">Academic Session</p>
+                        <p class="col-3">Academic Session<span class="text-danger">*</span></p>
                         <div class="col">
                             <select formControlName="academicSession" class="form-control form-select" required>
                                 <option value="">Select Academic Session</option>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex">
-                        <p class="col-3">Class</p>
+                        <p class="col-3">Class<span class="text-danger">*</span></p>
                         <div class="col">
                             <select formControlName="class" class="form-control form-select" required>
                                 <option value="">Select Class</option>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex">
-                        <p class="col-3">Section</p>
+                        <p class="col-3">Section<span class="text-danger">*</span></p>
                         <div class="col">
                             <select formControlName="section" class="form-control form-select" required>
                                 <option value="">Select Section</option>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Admission No.</p>
+                        <p class="col-3">Admission No.<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="admissionNo" type="text" class="form-control"
                                 placeholder="Admission No" required>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">First Name</p>
+                        <p class="col-3">First Name<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="firstName" type="text" class="form-control" placeholder="First Name"
                                 required>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Last Name</p>
+                        <p class="col-3">Last Name<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="lastName" type="text" class="form-control" placeholder="Last Name"
                                 required>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Student Email</p>
+                        <p class="col-3">Student Email<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="email" type="email" class="form-control" placeholder="Student Email"
                                 required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
@@ -140,7 +140,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Date of Birth</p>
+                        <p class="col-3">Date of Birth<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="dob" type="date" class="form-control" placeholder="Date of Birth"
                                 required>
@@ -182,13 +182,17 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Student Contact</p>
+                        <p class="col-3">Student Contact<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="studentContactNo" type="text" class="form-control"
-                                placeholder="Student Contact" required>
+                                placeholder="Student Contact" pattern="^(\+92|0){1}(31|32|33|34|35){1}[0-9]{8}$"
+                                required>
                             <div *ngIf="studentContactNo?.invalid && studentContactNo?.touched">
                                 <div class=" invalid-feedback d-block" *ngIf="studentContactNo?.errors?.['required']">
                                     This Feild is Required
+                                </div>
+                                <div class=" invalid-feedback d-block" *ngIf="studentContactNo?.errors?.['pattern']">
+                                    Please Enter a Valid Phone Number
                                 </div>
                             </div>
                         </div>
@@ -196,7 +200,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Gander</p>
+                        <p class="col-3">Gander<span class="text-danger">*</span></p>
                         <div class="col">
                             <select formControlName="gender" class="form-control form-select" required>
                                 <option value="">Gender</option>
@@ -214,7 +218,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Blood Group</p>
+                        <p class="col-3">Blood Group<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="bloodGroup" type="text" class="form-control"
                                 placeholder="Blood Group" required>
@@ -233,7 +237,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Address</p>
+                        <p class="col-3">Address<span class="text-danger">*</span></p>
                         <div class="col">
                             <textarea formControlName="address" class="form-control" placeholder="Address"
                                 required></textarea>
@@ -247,7 +251,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Zip Code</p>
+                        <p class="col-3">Zip Code<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="zipCode" type="text" class="form-control" placeholder="Zip Code"
                                 required>
@@ -261,7 +265,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Country</p>
+                        <p class="col-3">Country<span class="text-danger">*</span></p>
                         <div class="col">
                             <select formControlName="country" class="form-control form-select" required>
                                 <option value="">Select Country</option>
@@ -278,7 +282,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Father Name</p>
+                        <p class="col-3">Father Name<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="fatherName" type="text" class="form-control"
                                 placeholder="Father Name" required>
@@ -292,7 +296,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Father's Surname</p>
+                        <p class="col-3">Father's Surname<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="fatherSurname" type="text" class="form-control"
                                 placeholder="Father's Surname" required>
@@ -320,13 +324,17 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Father's Number</p>
+                        <p class="col-3">Father's Number<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="fatherNo" type="text" class="form-control"
-                                placeholder="Father's Number" required>
+                                placeholder="Father's Number" pattern="^(\+92|0){1}(31|32|33|34|35){1}[0-9]{8}$"
+                                required>
                             <div *ngIf="fatherNo?.invalid && fatherNo?.touched">
                                 <div class=" invalid-feedback d-block" *ngIf="fatherNo?.errors?.['required']">
                                     This Feild is Required
+                                </div>
+                                <div class=" invalid-feedback d-block" *ngIf="fatherNo?.errors?.['pattern']">
+                                    Please Enter a Valid Phone Number
                                 </div>
                             </div>
                         </div>
@@ -337,13 +345,19 @@
                         <p class="col-3">Father's CNIC</p>
                         <div class="col">
                             <input formControlName="fatherCNIC" type="text" class="form-control"
-                                placeholder="Father's CNIC">
+                                placeholder="Father's CNIC" pattern="^[0-9]{5}(-[0-9]{7})(-[0-9]{1})$"
+                                (ngModelChange)="setFatherCNIC($event)">
+                            <div *ngIf="fatherCNIC?.invalid && fatherCNIC?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="fatherCNIC?.errors?.['pattern']">
+                                    Please Enter a valid CNIC Number
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Father's Profession</p>
+                        <p class="col-3">Father's Profession<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="fatherProfession" type="text" class="form-control"
                                 placeholder="Father's Profession" required>
@@ -360,13 +374,13 @@
                         <p class="col-3">Father's Company</p>
                         <div class="col">
                             <input formControlName="fatherCompany" type="text" class="form-control"
-                                placeholder="Father's CNIC">
+                                placeholder="Father's Company">
                         </div>
                     </div>
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Mother Name</p>
+                        <p class="col-3">Mother Name<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="motherName" type="text" class="form-control"
                                 placeholder="Mother Name" required>
@@ -380,7 +394,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Mother's Surname</p>
+                        <p class="col-3">Mother's Surname<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="motherSurname" type="text" class="form-control"
                                 placeholder="Mother's Surname" required>
@@ -408,13 +422,17 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Mother's Number</p>
+                        <p class="col-3">Mother's Number<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="motherNo" type="text" class="form-control"
-                                placeholder="Mother's Number" required>
+                                placeholder="Mother's Number" pattern="^(\+92|0){1}(31|32|33|34|35){1}[0-9]{8}$"
+                                required>
                             <div *ngIf="motherNo?.invalid && motherNo?.touched">
                                 <div class=" invalid-feedback d-block" *ngIf="motherNo?.errors?.['required']">
                                     This Feild is Required
+                                </div>
+                                <div class=" invalid-feedback d-block" *ngIf="motherNo?.errors?.['pattern']">
+                                    Please Enter a Valid Phone Number
                                 </div>
                             </div>
                         </div>
@@ -425,7 +443,13 @@
                         <p class="col-3">Mother's CNIC</p>
                         <div class="col">
                             <input formControlName="motherCNIC" type="text" class="form-control"
-                                placeholder="Mother's CNIC">
+                                placeholder="Mother's CNIC" pattern="^[0-9]{5}(-[0-9]{7})(-[0-9]{1})$"
+                                (ngModelChange)="setMotherCNIC($event)">
+                            <div *ngIf="motherCNIC?.invalid && motherCNIC?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="motherCNIC?.errors?.['pattern']">
+                                    Please Enter a valid CNIC Number
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -454,7 +478,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Emergency Contact Name</p>
+                        <p class="col-3">Emergency Contact Name<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="emergencyContactName" type="text" class="form-control"
                                 placeholder="Emergency Contact Name" required>
@@ -469,13 +493,17 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Emergency Contact No</p>
+                        <p class="col-3">Emergency Contact No<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="emergencyContactNo" type="text" class="form-control"
-                                placeholder="Emergency Contact No" required>
+                                placeholder="Emergency Contact No" pattern="^(\+92|0){1}(31|32|33|34|35){1}[0-9]{8}$"
+                                required>
                             <div *ngIf="emergencyContactNo?.invalid && emergencyContactNo?.touched">
                                 <div class=" invalid-feedback d-block" *ngIf="emergencyContactNo?.errors?.['required']">
                                     This Feild is Required
+                                </div>
+                                <div class=" invalid-feedback d-block" *ngIf="emergencyContactNo?.errors?.['pattern']">
+                                    Please Enter a Valid Phone Number
                                 </div>
                             </div>
                         </div>
@@ -483,7 +511,7 @@
                 </div>
                 <div class="col-11 col-md-6 mt-4">
                     <div class="col-12 d-flex justify-content-center">
-                        <p class="col-3">Emergency Contact Relation</p>
+                        <p class="col-3">Emergency Contact Relation<span class="text-danger">*</span></p>
                         <div class="col">
                             <input formControlName="emergencyContactRelation" type="text" class="form-control"
                                 placeholder="Emergency Contact Relation" required>
