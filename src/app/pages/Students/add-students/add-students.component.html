@@ -25,9 +25,14 @@
                                 <option *ngFor="let section of academicsSessions" [value]="section.id">{{section.name}}
                                 </option>
                             </select>
+                            <div *ngIf="academicSession?.invalid && academicSession?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="academicSession?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button class="text-yellow ms-5 btn"><i class="fas fa-plus me-1"></i> Add Enrolment</button>
+                    <button class=" text-yellow ms-5 btn"><i class="fas fa-plus me-1"></i> Add Enrolment</button>
                 </div>
                 <div class="col-11 col-md-4">
                     <div class="col-12 d-flex">
@@ -35,8 +40,14 @@
                         <div class="col">
                             <select formControlName="class" class="form-control form-select" required>
                                 <option value="">Select Class</option>
-                                <option *ngFor="let class of classes" [value]="class.id">{{class.name}}</option>
+                                <option *ngFor="let class of classes" [value]="class.id">{{class.name}}
+                                </option>
                             </select>
+                            <div *ngIf="class?.invalid && class?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="class?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,9 +57,15 @@
                         <div class="col">
                             <select formControlName="section" class="form-control form-select" required>
                                 <option value="">Select Section</option>
-                                <option *ngFor="let section of sections" [value]="section.id">{{section.name}}</option>
+                                <option *ngFor="let section of sections" [value]="section.id">
+                                    {{section.name}}</option>
 
                             </select>
+                            <div *ngIf="section?.invalid && section?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="section?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,6 +80,11 @@
                         <div class="col">
                             <input formControlName="admissionNo" type="text" class="form-control"
                                 placeholder="Admission No" required>
+                            <div *ngIf="admissionNo?.invalid && admissionNo?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="admissionNo?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,6 +94,11 @@
                         <div class="col">
                             <input formControlName="firstName" type="text" class="form-control" placeholder="First Name"
                                 required>
+                            <div *ngIf="firstName?.invalid && firstName?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="firstName?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +108,11 @@
                         <div class="col">
                             <input formControlName="lastName" type="text" class="form-control" placeholder="Last Name"
                                 required>
+                            <div *ngIf="lastName?.invalid && lastName?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="lastName?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,7 +126,15 @@
                         <p class="col-3">Student Email</p>
                         <div class="col">
                             <input formControlName="email" type="email" class="form-control" placeholder="Student Email"
-                                required>
+                                required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+                            <div *ngIf="email?.invalid && email?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="email?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                                <div class=" invalid-feedback d-block" *ngIf="email?.errors?.['pattern']">
+                                    Please Enter a Valid Email
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,6 +144,11 @@
                         <div class="col">
                             <input formControlName="dob" type="date" class="form-control" placeholder="Date of Birth"
                                 required>
+                            <div *ngIf="dob?.invalid && dob?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="dob?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,6 +186,11 @@
                         <div class="col">
                             <input formControlName="studentContactNo" type="text" class="form-control"
                                 placeholder="Student Contact" required>
+                            <div *ngIf="studentContactNo?.invalid && studentContactNo?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="studentContactNo?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,6 +204,11 @@
                                 <option value="female">Female</option>
                                 <option value="other">Other</option>
                             </select>
+                            <div *ngIf="gender?.invalid && gender?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="gender?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,6 +218,11 @@
                         <div class="col">
                             <input formControlName="bloodGroup" type="text" class="form-control"
                                 placeholder="Blood Group" required>
+                            <div *ngIf="bloodGroup?.invalid && bloodGroup?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="bloodGroup?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,6 +237,11 @@
                         <div class="col">
                             <textarea formControlName="address" class="form-control" placeholder="Address"
                                 required></textarea>
+                            <div *ngIf="address?.invalid && address?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="address?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,6 +251,11 @@
                         <div class="col">
                             <input formControlName="zipCode" type="text" class="form-control" placeholder="Zip Code"
                                 required>
+                            <div *ngIf="zipCode?.invalid && zipCode?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="zipCode?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,8 +265,14 @@
                         <div class="col">
                             <select formControlName="country" class="form-control form-select" required>
                                 <option value="">Select Country</option>
-                                <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                                <option *ngFor="let country of countries" [value]="country.id">
+                                    {{country.name}}</option>
                             </select>
+                            <div *ngIf="country?.invalid && country?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="country?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,6 +282,11 @@
                         <div class="col">
                             <input formControlName="fatherName" type="text" class="form-control"
                                 placeholder="Father Name" required>
+                            <div *ngIf="fatherName?.invalid && fatherName?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="fatherName?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,6 +296,11 @@
                         <div class="col">
                             <input formControlName="fatherSurname" type="text" class="form-control"
                                 placeholder="Father's Surname" required>
+                            <div *ngIf="fatherSurname?.invalid && fatherSurname?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="fatherSurname?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,7 +309,12 @@
                         <p class="col-3">Father's Email</p>
                         <div class="col">
                             <input formControlName="fatherEmail" type="email" class="form-control"
-                                placeholder="Father's Email" >
+                                placeholder="Father's Email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+                            <div *ngIf="firstName?.invalid && firstName?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="firstName?.errors?.['pattern']">
+                                    Please Enter a valid Email
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -233,6 +324,11 @@
                         <div class="col">
                             <input formControlName="fatherNo" type="text" class="form-control"
                                 placeholder="Father's Number" required>
+                            <div *ngIf="fatherNo?.invalid && fatherNo?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="fatherNo?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -241,7 +337,7 @@
                         <p class="col-3">Father's CNIC</p>
                         <div class="col">
                             <input formControlName="fatherCNIC" type="text" class="form-control"
-                                placeholder="Father's CNIC" required>
+                                placeholder="Father's CNIC">
                         </div>
                     </div>
                 </div>
@@ -251,6 +347,11 @@
                         <div class="col">
                             <input formControlName="fatherProfession" type="text" class="form-control"
                                 placeholder="Father's Profession" required>
+                            <div *ngIf="fatherProfession?.invalid && fatherProfession?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="fatherProfession?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -259,7 +360,7 @@
                         <p class="col-3">Father's Company</p>
                         <div class="col">
                             <input formControlName="fatherCompany" type="text" class="form-control"
-                                placeholder="Father's CNIC" required>
+                                placeholder="Father's CNIC">
                         </div>
                     </div>
                 </div>
@@ -269,6 +370,11 @@
                         <div class="col">
                             <input formControlName="motherName" type="text" class="form-control"
                                 placeholder="Mother Name" required>
+                            <div *ngIf="motherName?.invalid && motherName?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="motherName?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -278,6 +384,11 @@
                         <div class="col">
                             <input formControlName="motherSurname" type="text" class="form-control"
                                 placeholder="Mother's Surname" required>
+                            <div *ngIf="motherSurname?.invalid && motherSurname?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="motherSurname?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,7 +397,12 @@
                         <p class="col-3">Mother's Email</p>
                         <div class="col">
                             <input formControlName="motherEmail" type="email" class="form-control"
-                                placeholder="Mother's Email" required>
+                                placeholder="Mother's Email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+                            <div *ngIf="firstName?.invalid && firstName?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="firstName?.errors?.['pattern']">
+                                    Please Enter a valid Email
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -296,6 +412,11 @@
                         <div class="col">
                             <input formControlName="motherNo" type="text" class="form-control"
                                 placeholder="Mother's Number" required>
+                            <div *ngIf="motherNo?.invalid && motherNo?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="motherNo?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -304,7 +425,7 @@
                         <p class="col-3">Mother's CNIC</p>
                         <div class="col">
                             <input formControlName="motherCNIC" type="text" class="form-control"
-                                placeholder="Mother's CNIC" required>
+                                placeholder="Mother's CNIC">
                         </div>
                     </div>
                 </div>
@@ -313,7 +434,7 @@
                         <p class="col-3">Mother's Profession</p>
                         <div class="col">
                             <input formControlName="motherProfession" type="text" class="form-control"
-                                placeholder="Mother's Profession" required>
+                                placeholder="Mother's Profession">
                         </div>
                     </div>
                 </div>
@@ -322,7 +443,12 @@
                         <p class="col-3">Parents Email</p>
                         <div class="col">
                             <input formControlName="parentsEmail" type="email" class="form-control"
-                                placeholder="Parents Email" required>
+                                placeholder="Parents Email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+                            <div *ngIf="parentsEmail?.invalid && parentsEmail?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="parentsEmail?.errors?.['pattern']">
+                                    Please Enter a valid Email
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -332,6 +458,12 @@
                         <div class="col">
                             <input formControlName="emergencyContactName" type="text" class="form-control"
                                 placeholder="Emergency Contact Name" required>
+                            <div *ngIf="emergencyContactName?.invalid && emergencyContactName?.touched">
+                                <div class=" invalid-feedback d-block"
+                                    *ngIf="emergencyContactName?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -341,6 +473,11 @@
                         <div class="col">
                             <input formControlName="emergencyContactNo" type="text" class="form-control"
                                 placeholder="Emergency Contact No" required>
+                            <div *ngIf="emergencyContactNo?.invalid && emergencyContactNo?.touched">
+                                <div class=" invalid-feedback d-block" *ngIf="emergencyContactNo?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -350,6 +487,12 @@
                         <div class="col">
                             <input formControlName="emergencyContactRelation" type="text" class="form-control"
                                 placeholder="Emergency Contact Relation" required>
+                            <div *ngIf="emergencyContactRelation?.invalid && emergencyContactRelation?.touched">
+                                <div class=" invalid-feedback d-block"
+                                    *ngIf="emergencyContactRelation?.errors?.['required']">
+                                    This Feild is Required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -358,7 +501,7 @@
                         <p class="col-3">1. Sibling's Name</p>
                         <div class="col">
                             <input formControlName="sibling1Name" type="text" class="form-control"
-                                placeholder="1. Sibling's Name" required>
+                                placeholder="1. Sibling's Name">
                         </div>
                     </div>
                 </div>
@@ -367,7 +510,7 @@
                         <p class="col-3">1. Sibling's Class/Campus</p>
                         <div class="col">
                             <input formControlName="sibling1Class" type="text" class="form-control"
-                                placeholder="1. Sibling's Class/Campus" required>
+                                placeholder="1. Sibling's Class/Campus">
                         </div>
                     </div>
                 </div>
@@ -376,7 +519,7 @@
                         <p class="col-3">2. Sibling's Name</p>
                         <div class="col">
                             <input formControlName="sibling2Name" type="text" class="form-control"
-                                placeholder="2. Sibling's Name" required>
+                                placeholder="2. Sibling's Name">
                         </div>
                     </div>
                 </div>
@@ -385,7 +528,7 @@
                         <p class="col-3">2. Sibling's Class/Campus</p>
                         <div class="col">
                             <input formControlName="sibling2Class" type="text" class="form-control"
-                                placeholder="2. Sibling's Class/Campus" required>
+                                placeholder="2. Sibling's Class/Campus">
                         </div>
                     </div>
                 </div>
@@ -394,7 +537,7 @@
                         <p class="col-3">3. Sibling's Name</p>
                         <div class="col">
                             <input formControlName="sibling3Name" type="text" class="form-control"
-                                placeholder="3. Sibling's Name" required>
+                                placeholder="3. Sibling's Name">
                         </div>
                     </div>
                 </div>
@@ -403,7 +546,7 @@
                         <p class="col-3">3. Sibling's Class/Campus</p>
                         <div class="col">
                             <input formControlName="sibling3Class" type="text" class="form-control"
-                                placeholder="3. Sibling's Class/Campus" required>
+                                placeholder="3. Sibling's Class/Campus">
                         </div>
                     </div>
                 </div>
@@ -416,8 +559,8 @@
                     <div class="col-12 d-flex justify-content-center">
                         <p class="col-3">Facebook Link</p>
                         <div class="col">
-                            <input formControlName="fbLink" type="text" class="form-control" placeholder="Facebook Link"
-                                required>
+                            <input formControlName="fbLink" type="text" class="form-control"
+                                placeholder="Facebook Link">
                         </div>
                     </div>
                 </div>
@@ -426,12 +569,12 @@
                         <p class="col-3">Linkedin Profile Link</p>
                         <div class="col">
                             <input formControlName="linkedinProfile" type="text" class="form-control"
-                                placeholder="Linkedin Profile Link" required>
+                                placeholder="Linkedin Profile Link">
                         </div>
                     </div>
                 </div>
             </div>
-            <button *ngIf="!loading" type="submit" class="btn btn-primary mt-5">Add</button>
+            <button *ngIf="!loading" type="submit" class="btn btn-primary mt-5" [disabled]="form.invalid">Add</button>
             <button *ngIf="loading" class="btn btn-primary mt-5" type="button" disabled>
                 <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
                 Loading...

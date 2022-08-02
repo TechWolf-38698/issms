@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { OptionalEmailValidator } from '../../../Shared/Optional-Email-Validator';
 
 @Component({
   selector: 'app-add-students',
@@ -8,7 +7,9 @@ import { OptionalEmailValidator } from '../../../Shared/Optional-Email-Validator
   templateUrl: './add-students.component.html',
 })
 export class AddStudentsComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.ngOnInit();
+  }
 
   loading = false;
 
@@ -16,51 +17,53 @@ export class AddStudentsComponent implements OnInit {
     academicSession: ['', Validators.required],
     class: ['', Validators.required],
     section: ['', Validators.required],
-    admissionNo: ['string', Validators.required],
-    firstName: ['string', Validators.required],
-    lastName: ['string', Validators.required],
-    email: ['string', [Validators.required, Validators.email]],
-    dob: ['string', Validators.required],
+    admissionNo: ['', Validators.required],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    email: ['', Validators.required],
+    dob: ['', Validators.required],
     studentHouse: this.fb.group({
       cardinal: [false],
       paramount: [false],
       eminent: [false],
     }),
-    studentContactNo: ['string', Validators.required],
+    studentContactNo: ['', Validators.required],
     gender: ['', Validators.required],
-    bloodGroup: ['string'],
-    address: ['string', Validators.required],
-    profilePic: ['string'],
-    zipCode: ['string'],
+    bloodGroup: [''],
+    address: ['', Validators.required],
+    profilePic: [''],
+    zipCode: [''],
     country: ['', Validators.required],
-    fatherName: ['string', Validators.required],
-    fatherSurname: ['string', Validators.required],
-    fatherEmail: ['string', OptionalEmailValidator],
-    fatherNo: ['string', Validators.required],
-    fatherCNIC: ['string'],
-    fatherProfession: ['string', Validators.required],
-    fatherCompany: ['string'],
-    motherName: ['string', Validators.required],
-    motherSurname: ['string', Validators.required],
-    motherEmail: ['string'],
-    motherNo: ['string', Validators.required],
-    motherCNIC: ['string'],
-    motherProfession: ['string'],
-    parentsEmail: ['string'],
-    emergencyContactName: ['string', Validators.required],
-    emergencyContactNo: ['string', Validators.required],
-    emergencyContactRelation: ['string', Validators.required],
-    sibling1Name: ['string'],
-    sibling1Class: ['string'],
-    sibling2Name: ['string'],
-    sibling2Class: ['string'],
-    sibling3Name: ['string'],
-    sibling3Class: ['string'],
-    fbLink: ['string'],
-    linkedinProfile: ['string'],
+    fatherName: ['', Validators.required],
+    fatherSurname: ['', Validators.required],
+    fatherEmail: ['', Validators.email],
+    fatherNo: ['', Validators.required],
+    fatherCNIC: [''],
+    fatherProfession: ['', Validators.required],
+    fatherCompany: [''],
+    motherName: ['', Validators.required],
+    motherSurname: ['', Validators.required],
+    motherEmail: ['', Validators.email],
+    motherNo: ['', Validators.required],
+    motherCNIC: [''],
+    motherProfession: [''],
+    parentsEmail: [''],
+    emergencyContactName: ['', Validators.required],
+    emergencyContactNo: ['', Validators.required],
+    emergencyContactRelation: ['', Validators.required],
+    sibling1Name: [''],
+    sibling1Class: [''],
+    sibling2Name: [''],
+    sibling2Class: [''],
+    sibling3Name: [''],
+    sibling3Class: [''],
+    fbLink: [''],
+    linkedinProfile: [''],
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.form.get('motherEmail'));
+  }
 
   onSubmit() {
     this.loading = true;
@@ -68,6 +71,9 @@ export class AddStudentsComponent implements OnInit {
       console.log(this.form.value);
       this.form.reset();
       this.loading = false;
+      this.ngOnInit();
+      // Uncomment the line blow after testing APi on this page
+      // window.location.reload();
     }, 1000);
   }
 
@@ -143,4 +149,128 @@ export class AddStudentsComponent implements OnInit {
       name: 'Option 4',
     },
   ];
+
+  get academicSession() {
+    return this.form.get('academicSession');
+  }
+  get class() {
+    return this.form.get('class');
+  }
+  get section() {
+    return this.form.get('section');
+  }
+  get admissionNo() {
+    return this.form.get('admissionNo');
+  }
+  get firstName() {
+    return this.form.get('firstName');
+  }
+  get lastName() {
+    return this.form.get('lastName');
+  }
+  get email() {
+    return this.form.get('email');
+  }
+  get dob() {
+    return this.form.get('dob');
+  }
+  get studentHouse() {
+    return this.form.get('studentHouse');
+  }
+  get studentContactNo() {
+    return this.form.get('studentContactNo');
+  }
+  get gender() {
+    return this.form.get('gender');
+  }
+  get bloodGroup() {
+    return this.form.get('bloodGroup');
+  }
+  get address() {
+    return this.form.get('address');
+  }
+  get profilePic() {
+    return this.form.get('profilePic');
+  }
+  get zipCode() {
+    return this.form.get('zipCode');
+  }
+  get country() {
+    return this.form.get('country');
+  }
+  get fatherName() {
+    return this.form.get('fatherName');
+  }
+  get fatherSurname() {
+    return this.form.get('fatherSurname');
+  }
+  get fatherEmail() {
+    return this.form.get('fatherEmail');
+  }
+  get fatherNo() {
+    return this.form.get('fatherNo');
+  }
+  get fatherCNIC() {
+    return this.form.get('fatherCNIC');
+  }
+  get fatherProfession() {
+    return this.form.get('fatherProfession');
+  }
+  get fatherCompany() {
+    return this.form.get('fatherCompany');
+  }
+  get motherName() {
+    return this.form.get('motherName');
+  }
+  get motherSurname() {
+    return this.form.get('motherSurname');
+  }
+  get motherEmail() {
+    return this.form.get('motherEmail');
+  }
+  get motherNo() {
+    return this.form.get('motherNo');
+  }
+  get motherCNIC() {
+    return this.form.get('motherCNIC');
+  }
+  get motherProfession() {
+    return this.form.get('motherProfession');
+  }
+  get parentsEmail() {
+    return this.form.get('parentsEmail');
+  }
+  get emergencyContactName() {
+    return this.form.get('emergencyContactName');
+  }
+  get emergencyContactNo() {
+    return this.form.get('emergencyContactNo');
+  }
+  get emergencyContactRelation() {
+    return this.form.get('emergencyContactRelation');
+  }
+  get sibling1Name() {
+    return this.form.get('sibling1Name');
+  }
+  get sibling1Class() {
+    return this.form.get('sibling1Class');
+  }
+  get sibling2Name() {
+    return this.form.get('sibling1Name');
+  }
+  get sibling2Class() {
+    return this.form.get('sibling1Class');
+  }
+  get sibling3Name() {
+    return this.form.get('sibling1Name');
+  }
+  get sibling3Class() {
+    return this.form.get('sibling1Class');
+  }
+  get fbLink() {
+    return this.form.get('fbLink');
+  }
+  get linkedinProfile() {
+    return this.form.get('linkedinProfile');
+  }
 }
