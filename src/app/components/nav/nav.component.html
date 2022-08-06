@@ -4,7 +4,7 @@
     <a class="navbar-brand ps-4  pe-0 me-0 w-auto" [routerLink]="'/dashboard'"> BVHS</a>
     <ul class="navbar-nav align-items-center ms-5">
         <li class="nav-item dropdown no-caret d-none d-md-block me-3">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" onclick="showHide()" href="javascript:void(0);"
+            <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" (click)="showHide()" href="javascript:void(0);"
                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="fw-500 fs-3">Modules</div>
                 <i class="fas fa-chevron-right dropdown-arrow"></i>
@@ -36,8 +36,8 @@
                                                 <h4> <i class="fa-solid fa-screwdriver-wrench cl-is fa-2x p-1"></i>
                                                     Class & Subject</h4>
                                                 <ul class="my-list-style">
-                                                    <a [routerLink]="'/manage-class-and-subjects'">
-                                                        <li>Manage Class & Subjects</li>
+                                                    <a routerLink="/manage-class-and-subjects">
+                                                        <li (click)="showHide()" >Manage Class & Subjects</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -45,11 +45,11 @@
                                                 <h4><i class="fa-solid fa-users-between-lines cl-is fa-2x p-1"></i>
                                                     Students</h4>
                                                 <ul class="my-list-style">
-                                                    <a [routerLink]="'/students/manage'">
-                                                        <li>Manage Students</li>
+                                                    <a routerLink="/students/manage">
+                                                        <li (click)="showHide()" >Manage Students</li>
                                                     </a>
-                                                    <a [routerLink]="'/manage-alumni'">
-                                                        <li>Manage Alumni</li>
+                                                    <a routerLink="/manage-alumni">
+                                                        <li (click)="showHide()" >Manage Alumni</li>
                                                     </a>
 
 
@@ -60,11 +60,11 @@
                                                 <h4><i class="fa-solid fa-user-group  cl-is fa-2x p-1"></i>Teacher/Admin
                                                     Staff</h4>
                                                 <ul class="my-list-style">
-                                                    <a [routerLink]="'/teachers/manage'">
-                                                        <li>Manage Teacher/Admin Staff</li>
+                                                    <a routerLink="/teachers/manage">
+                                                        <li (click)="showHide()" >Manage Teacher/Admin Staff</li>
                                                     </a>
-                                                    <a href="./Pages/subject-allocation.html">
-                                                        <li>Subject Allocation</li>
+                                                    <a routerLink="/subject-allocation">
+                                                        <li (click)="showHide()" >Subject Allocation</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -73,7 +73,7 @@
                                                 </h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/manage-parents.html">
-                                                        <li>Manage Parents</li>
+                                                        <li (click)="showHide()" >Manage Parents</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -84,7 +84,7 @@
                                                 <h4> <i class="fa-regular fa-paste cl-is fa-2x p-1"></i> Assessment
                                                     & Grading</h4>
                                                 <ul class="my-list-style">
-                                                    <li>Manage Assessment & Grading</li>
+                                                    <li (click)="showHide()" >Manage Assessment & Grading</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3">
@@ -92,7 +92,7 @@
                                                 </h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/attendence.html">
-                                                        <li>Manage Attendance </li>
+                                                        <li (click)="showHide()" >Manage Attendance </li>
                                                     </a>
                                                 </ul>
 
@@ -102,10 +102,10 @@
                                                     Records</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/health-records-student.html">
-                                                        <li>Student</li>
+                                                        <li (click)="showHide()" >Student</li>
                                                     </a>
                                                     <a href="./Pages/health-records-teacher.html">
-                                                        <li>Teacher</li>
+                                                        <li (click)="showHide()" >Teacher</li>
                                                     </a>
 
                                                 </ul>
@@ -115,7 +115,7 @@
                                                     Learning</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/social-learning.html">
-                                                        <li>Social Learning</li>
+                                                        <li (click)="showHide()" >Social Learning</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -123,7 +123,7 @@
                                                 <h4><i class="fas fa-star-of-david cl-is fa-2x p-1"></i>LMS</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/lms.html">
-                                                        <li>Learning Management System</li>
+                                                        <li (click)="showHide()" >Learning Management System</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -139,8 +139,8 @@
                                                 <h4> <i class="fa-solid fa-envelope cl-is fa-2x p-1"></i>
                                                     Messaging</h4>
                                                 <ul class="my-list-style">
-                                                    <li>SMS</li>
-                                                    <li>Emails</li>
+                                                    <li (click)="showHide()" >SMS</li>
+                                                    <li (click)="showHide()" >Emails</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3">
@@ -148,10 +148,10 @@
                                                     Events</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/manage-event.html-">
-                                                        <li>Manage Events</li>
+                                                        <li (click)="showHide()" >Manage Events</li>
                                                     </a>
                                                     <a href="./Pages/manage-schedules.html">
-                                                        <li>Manage Class Schedule</li>
+                                                        <li (click)="showHide()" >Manage Class Schedule</li>
                                                     </a>
 
                                                 </ul>
@@ -162,7 +162,7 @@
                                                     Board</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/manage-notices.html">
-                                                        <li>Manage Notices</li>
+                                                        <li (click)="showHide()" >Manage Notices</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -171,7 +171,7 @@
                                                 </h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/student-activities.html">
-                                                        <li>Student Activites</li>
+                                                        <li (click)="showHide()" >Student Activites</li>
                                                     </a>
                                                 </ul>
                                             </div>
@@ -187,9 +187,9 @@
                                                     Library</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/manage-books.html">
-                                                        <li>Manage Books</li>
+                                                        <li (click)="showHide()" >Manage Books</li>
                                                     </a>
-                                                    <li>Check-in Records</li>
+                                                    <li (click)="showHide()" >Check-in Records</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3">
@@ -197,7 +197,7 @@
                                                     Reports</h4>
                                                 <ul class="my-list-style">
                                                     <a href="./Pages/reports-academics.html">
-                                                        <li>View Reports</li>
+                                                        <li (click)="showHide()" >View Reports</li>
                                                     </a>
                                                 </ul>
 
@@ -209,7 +209,7 @@
                                                 <h4> <i class="fa-solid fa-sack-dollar cl-is fa-2x p-1"></i> Fees &
                                                     Invoicing</h4>
                                                 <ul class="my-list-style">
-                                                    <li>Manage Fees & Invoicing</li>
+                                                    <li (click)="showHide()" >Manage Fees & Invoicing</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3">
@@ -217,7 +217,7 @@
                                                     & Accounting
                                                 </h4>
                                                 <ul class="my-list-style">
-                                                    <li>Manage Finance & Accounting</li>
+                                                    <li (click)="showHide()" >Manage Finance & Accounting</li>
                                                 </ul>
 
                                             </div>
@@ -226,8 +226,8 @@
                                                         class="fa-solid fa-hand-holding-heart cl-is fa-2x p-1"></i>Fundraising
                                                 </h4>
                                                 <ul class="my-list-style">
-                                                    <li>Mahage Campaigns</li>
-                                                    <li>Front End</li>
+                                                    <li (click)="showHide()" >Mahage Campaigns</li>
+                                                    <li (click)="showHide()" >Front End</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3">
@@ -235,14 +235,14 @@
                                                     &
                                                     Forms</h4>
                                                 <ul class="my-list-style">
-                                                    <li>Students Recruitment & Forms</li>
+                                                    <li (click)="showHide()" >Students Recruitment & Forms</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3">
                                                 <h4><i class="fas fa-receipt cl-is fa-2x p-1"></i>E-Commerce
                                                 </h4>
                                                 <ul class="my-list-style">
-                                                    <li>Dashboard</li>
+                                                    <li (click)="showHide()" >Dashboard</li>
                                                 </ul>
                                             </div>
                                         </div>

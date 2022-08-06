@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,20 @@ import { AddTeachersComponent } from './pages/Teachers/add-teachers/add-teachers
 import { AddAdminStaffComponent } from './pages/AdminStaff/add-admin-staff/add-admin-staff.component';
 import { ManageAdminStaffComponent } from './pages/AdminStaff/manage-admin-staff/manage-admin-staff.component';
 import { IndexAdminStaffComponent } from './pages/AdminStaff/index-admin-staff/index-admin-staff.component';
+import { LoginComponent } from './components/login/login.component';
+
+// Login
+
+import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './service/token-interceptor.service';
+import { AuthService } from './service/auth.service';
+import { Router, Routes } from '@angular/router';
+// import { AppInitService } from './service/app-init.service';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -38,9 +52,30 @@ import { IndexAdminStaffComponent } from './pages/AdminStaff/index-admin-staff/i
     AddAdminStaffComponent,
     ManageAdminStaffComponent,
     IndexAdminStaffComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['example.com'],
+        disallowedRoutes: ['http://example.com/examplebadroute/'],
+      },
+    }),
+  ],
+
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

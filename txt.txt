@@ -1,0 +1,8 @@
+Details = [
+Dashbord,
+Login,
+Student Form,
+{
+time: "3rd Aug, 1:20 PM"
+}
+]
